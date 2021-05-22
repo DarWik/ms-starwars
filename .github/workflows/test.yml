@@ -34,3 +34,19 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Install
+        run: npm install
+      - name: unit-test
+        run : npm run unit-tests
+        
+      - name: integration-test
+        run : npm run integration-tests
+        
+      - name: Test Report unit
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: mocha Tests unit
+          path: ./test-results.json
+          reporter: mocha-json
