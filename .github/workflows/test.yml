@@ -73,7 +73,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.<Wisit> }}
           SONAR_TOKEN: ${{ secrets.<Token_test> }}
         with:
-          args: >
+          args:
             -Dsonar.organization=<DarWik>
             -Dsonar.projectKey=<ms-starwars>
           projectBaseDir: ./
